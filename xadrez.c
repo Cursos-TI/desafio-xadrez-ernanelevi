@@ -4,7 +4,8 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
+int main()
+{
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
     int i_bispo = 0, i_torre = 0, i_rainha = 0; // declaração da varavel fora, para funcionar para os 3
@@ -28,6 +29,12 @@ int main() {
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    do
+    {
+        printf("Rainha (%d): moveu-se para a esquerda\n", i_rainha + 1); // imprime o movimento
+        i_rainha++;                                                      // incremento, anda uma casa a mais
+    } while (i_rainha < 8); // condição
+    printf("Rainha terminou de se mover!\n");
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
