@@ -3,38 +3,53 @@
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+void moverBispo(int casas_bispo)
+{
+    if (casas_bispo > 0)
+    {
+        printf("Bispo: moveu-se na diagonal direita, para cima\n");
+        moverBispo(casas_bispo - 1);
+    }
+}
+
+void moverTorre(int casas_torre)
+{
+    if (casas_torre > 0)
+    {
+        printf("Torre: moveu-se para direita\n");
+        moverTorre(casas_torre - 1);
+    }
+}
+
+void moverRainha(int casas_rainha)
+{
+    if (casas_rainha > 0)
+    {
+        printf("Rainha: moveu-se para a esquerda\n");
+        moverRainha(casas_rainha - 1);
+    }
+}
 
 int main()
 {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int i_bispo = 0, i_torre = 0, i_rainha = 0, i_cavalo = 0; // declaração da varavel fora, para funcionar para os 3
+    int i_bispo = 5, i_torre = 5, i_rainha = 8, i_cavalo = 0; // declaração da varavel fora, para funcionar para os 3
     int movimentoCompleto = 1;
 
     // Implementação de Movimentação do Bispo
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-    while (i_bispo < 5) // condição
-    {
-        printf("Bispo (%d): moveu-se na diagonal direita, para cima\n", i_bispo + 1); // imprime o movimento
-        i_bispo++;                                                                    // incremento, anda uma casa a mais
-    }
+    moverBispo(i_bispo);
     printf("Bispo terminou de se mover!\n");
 
     // Implementação de Movimentação da Torre
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-    for (i_torre = 0; i_torre < 5; i_torre++)
-    {                                                               // condição
-        printf("Torre (%d): moveu-se para direita\n", i_torre + 1); // imprime o movimento
-    }
-    printf("Torre terminou de se mover!\n");
+    moverTorre(i_torre);
+    printf("torre terminou de se mover!\n");
 
     // Implementação de Movimentação da Rainha
     // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-    do
-    {
-        printf("Rainha (%d): moveu-se para a esquerda\n", i_rainha + 1); // imprime o movimento
-        i_rainha++;                                                      // incremento, anda uma casa a mais
-    } while (i_rainha < 8); // condição
+    moverRainha(i_rainha);
     printf("Rainha terminou de se mover!\n");
 
     // Nível Aventureiro - Movimentação do Cavalo
@@ -44,7 +59,7 @@ int main()
     {
         for (i_cavalo = 0; i_cavalo < 2; i_cavalo++)
         {
-            printf("Cavalo (%d): moveu-se para cima\n", i_cavalo + 1);
+            printf("Cavalo: moveu-se para cima\n");
         }
         printf("Cavalo moveu-se para a direita\n");
     }
